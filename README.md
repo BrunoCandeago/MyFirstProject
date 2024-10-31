@@ -1,7 +1,9 @@
-Proyecto: Clases de Animales en Python 🐾
+Clases de Animales en Python 🐾
+
 Este proyecto implementa un modelo básico de clases en Python para representar distintos tipos de animales y su comportamiento. Utiliza conceptos de Programación Orientada a Objetos (POO), como la herencia, el polimorfismo y las clases abstractas, para estructurar diferentes tipos de animales y sus comportamientos específicos.
 
 Descripción
+
 El objetivo de este proyecto es crear una jerarquía de clases que represente distintos tipos de animales (Animal, AnimalAcuatico, Leon, Jirafa, Delfin) y sus métodos. La clase base Animal define características y comportamientos básicos, mientras que las subclases representan tipos específicos de animales con sus propias acciones y comportamientos.
 
 Clases Principales
