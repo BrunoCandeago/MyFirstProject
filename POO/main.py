@@ -1,5 +1,6 @@
 from abc import abstractmethod, ABC
 from typing import List
+import requests
 
 class Animal(ABC):
     def __init__(self, nombre, tipo, alimentacion, habitat):
@@ -52,9 +53,9 @@ class Delfin(AnimalAcuatico):
     def comer(self):
         print (f"{self.nombre} come peces")
 
-jirafa = Jirafa('jirafa', 'nigeriana','herbivoro', 'la sabana')
-leon = Leon('leon', 'del congo','carnivoro', 'bosque seco')
-delfin = Delfin('delfin', 'orca', 'carnivoro', 'mar')
+jirafa = Jirafa('Jirafa', 'nigeriana','herbivoro', 'la sabana')
+leon = Leon('Leon', 'del congo','carnivoro', 'bosque seco')
+delfin = Delfin('Delfin', 'orca', 'carnivoro', 'mar')
 
 animales: List[Animal] = list()
 animales.append(leon)
@@ -63,4 +64,21 @@ animales.append(jirafa)
 
 for animal in animales:
     animal.caminar()
+
+def dolar():
+    url = "https://api.bluelytics.com.ar/v2/latest"
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        datos = response.json()
+        datos = datos["blue"]
+        print (f'\nDOLAR BLUE'
+               f'\n Promedio: {datos['value_avg']}'
+               f'\n Precio compra: {datos['value_buy']}'
+               f'\n Precio venta: {datos["value_sell"]}')
+    else:
+        print(f'Error {response.status_code}')
+
+dolar()
+
 
